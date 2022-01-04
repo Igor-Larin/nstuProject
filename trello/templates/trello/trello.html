@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>Trello</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'trello/css/landing.css' %}">
+  </head>
+  <body>
+    <header class="lbrown">
+      <a id="trello" class="brown" href="{% url 'landing' 'trello' %}">Trello</a>
+      <div id="login">
+        <a id="logButton" class="brown" href="{% url 'landing' 'main' %}">Войти</a>
+        <a id="regButtonH" class="green" href="{% url 'landing' 'registration' %}">Регистрация</a>
+      </div>
+    </header>
+    <main>
+      <div id="descr">
+        <p>
+          Это не просто работа. Это координация действий в команде.
+        </p>
+        <p>
+          Начните с досок, колонок и карточек, а затем переходите к более сложным функциям. Управляйте проектами, упорядочивайте задачи и поддерживайте командный дух — все это в Trello.
+        </p>
+      </div>
+      <div id="img">
+      <img src="https://i.postimg.cc/mr7G7WkS/example.png" width=100%>
+      </div>
+      <div id="reg" class="lbrown">
+        <p>
+          Начните планировать свои групповые проекты прямо сейчас
+        </p>
+        <form action="{% url 'landing' 'registration' %}">
+          <p>
+            Пройдите регистрацию:
+          </p>
+          <div id="inp">
+            <input id="mail" placeholder="Электронная почта">
+            <button id="regButton" type="submit" class="green">
+              Зарегистрироваться
+            </button>
+          </div>          
+        </form>
+      </div>      
+    </main>
+    <footer>
+      <a href="#">О нас</a>
+      <a href="#">Новости</a>
+      <a href="#">Помощь</a>
+    </footer>
+  </body>
+
+</html>

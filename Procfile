@@ -1,0 +1,1 @@
+web gunicorn nstuProject.wsgi:application —log-file -
