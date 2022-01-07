@@ -3,12 +3,13 @@
   <head>
     <title>Доска</title>
       {% load static %}
+      {% load index %}
     <link rel="stylesheet" type="text/css" href="{% static 'trello/css/main.css' %}">
   </head>
 
   <body>
     <header>
-      <a id="trello" class="headerElem" href="{% url 'landing' 'trello' %}">Trello</a>
+      <a id="trello" class="headerElem" href="{% url 'landing' %}">Trello</a>
       <div id="deskname" class="headerElem">
         Имя доски
       </div>
@@ -17,81 +18,26 @@
       </div>
     </header>
     <main>
-      <div class="card">
-        <p>
-          Имя карточки
-        </p>
-        <div class="inside">
-          <div class="task">
-            Задание 1
+        {% for id in card_ids %}
+          <div class="card">
+            <p>
+              {{ cards|index:id }}
+            </p>
+              {% for task in tasks|index:id %}
+                <div class="inside">
+                  <div class="task">
+                      {{ task }}
+                  </div>
+                  <div class="editButton">
+                    ред.
+                  </div>
+                </div>
+                  {% endfor %}
+            <div class="addTaskButton">
+              Добавить задание
+            </div>
           </div>
-          <div class="editButton">
-            ред.
-          </div>
-        </div>
-        <div class="inside">
-          <div class="task">
-            Задание 2
-          </div>
-          <div class="editButton">
-            ред.
-          </div>
-        </div>
-        <div class="inside">
-          <div class="task">
-            Задание 3
-          </div>
-          <div class="editButton">
-            ред.
-          </div>
-        </div>
-        <div class="addTaskButton">
-          Добавить задание
-        </div>
-      </div>
-      <div class="card">
-        <p>
-          Имя карточки
-        </p>
-        <div class="inside">
-          <div class="task">
-            Задание 1
-          </div>
-          <div class="editButton">
-            ред.
-          </div>
-        </div>
-        <div class="inside">
-          <div class="task">
-            Задание 2
-          </div>
-          <div class="editButton">
-            ред.
-          </div>
-        </div>
-        <div class="addTaskButton">
-          Добавить задание
-          </div>
-      </div>
-      <div class="card">
-        <p>
-          Имя карточки
-        </p>
-        <div class="inside">
-          <div class="task">
-            Задание 1
-          </div>
-          <div class="editButton">
-            ред.
-          </div>
-        </div>
-        <div class="addTaskButton">
-          Добавить задание
-          </div>
-      </div>
-      <div class="addCardButton">
-      Добавить карточку     
-      </div>
+        {% endfor %}
     </main>
     <footer>
       <a href="#">О нас</a>

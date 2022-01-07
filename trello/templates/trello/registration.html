@@ -8,10 +8,10 @@
 
   <body>
     <header class="lbrown">
-      <a id="trello" class="brown" href="{% url 'landing' 'trello' %}">Trello</a>
+      <a id="trello" class="brown" href="{% url 'landing' %}">Trello</a>
     </header>
     <main>
-      <form action="{% url 'landing' 'main' %}">
+      <form action="{% url 'main' %}">
         <p>
           Регистрация нового пользователя
         </p>
@@ -24,7 +24,7 @@
           <p id="haveAcc">
             Уже есть аккаунт?
           </p>
-          <a id="loginButton" class="gray" href="{% url 'landing' 'main' %}">Войти</a>
+          <a id="loginButton" class="gray" href="{% url 'main' %}">Войти</a>
         </div>
       </form>
     </main>

@@ -18,5 +18,7 @@ from django.urls import path
 from trello import views
 
 urlpatterns = [
-    path('<name>/', views.landing, name='landing'),
+    path('trello/', views.landing, name='landing'),
+    path('registration/', views.registration, name='registration'),
+    path('main/', views.main, name='main'),
 ]

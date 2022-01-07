@@ -6,10 +6,10 @@
   </head>
   <body>
     <header class="lbrown">
-      <a id="trello" class="brown" href="{% url 'landing' 'trello' %}">Trello</a>
+      <a id="trello" class="brown" href="{% url 'landing' %}">Trello</a>
       <div id="login">
-        <a id="logButton" class="brown" href="{% url 'landing' 'main' %}">Войти</a>
-        <a id="regButtonH" class="green" href="{% url 'landing' 'registration' %}">Регистрация</a>
+        <a id="logButton" class="brown" href="{% url 'main'  %}">Войти</a>
+        <a id="regButtonH" class="green" href="{% url 'registration'  %}">Регистрация</a>
       </div>
     </header>
     <main>
@@ -28,7 +28,7 @@
         <p>
           Начните планировать свои групповые проекты прямо сейчас
         </p>
-        <form action="{% url 'landing' 'registration' %}">
+        <form action="{% url 'registration' %}">
           <p>
             Пройдите регистрацию:
           </p>
